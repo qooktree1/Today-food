@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+	<title>제비뽑기 : 오늘의 음식</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel="stylesheet" href="../../assets/css/game_lots.css" />
+	<noscript>
+		<link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo (로고) -->
+				<a href="../../index.html" class="logo">
+					<span class="symbol">
+						<img src="../../images/logo.svg" alt="로고" /></span><span class="title">오늘의 음식</span>
+				</a>
+
+				<!-- 메뉴바 (최대 화면) -->
+				<!-- https://amaze9001.tistory.com/70 참고 -->
+				<a>
+					<ul>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/about.html" class="active">
+								<button class="dropbtn">About Us</button></a>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Game</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/Game/lots.html">제비뽑기</a>
+								<a href="../../subpages/Game/roulette.html">룰렛</a>
+								<a href="../../subpages/Game/ghostleg.html">사다리타기</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Food Rank</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/FoodRank/wholefoodrank.html">전체 음식 순위</a>
+								<a href="../../subpages/FoodRank/chosencategoryrank.html">항목별 음식 순위</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/BulletinBoard/bulletinboard.html" class="active">
+								<button class="dropbtn">BulletinBoard</button></a>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/contactus.html" class="active">
+								<button class="dropbtn">Contact Us</button></a>
+						</div>
+					</ul>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- 메뉴 (축소 화면) -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../subpages/ETC/about.html">About Us</a></li>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Game
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/lots.html"
+						style="color: white">제비뽑기</a>
+				</div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/roulette.html"
+						style="color: white">룰렛</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/ghostleg.html"
+						style="color: white">사다리타기</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Food Rank
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/wholefoodrank.html"
+						style="color: white">전체음식순위</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/chosencategoryrank.html"
+						style="color: white">항목별음식순위</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li><a href="../../subpages/BulletinBoard/bulletinboard.html">Bulletin Board</a></li>
+				<li><a href="../../subpages/ETC/contactus.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<p>
+					<h1>제비뽑기</h1>
+				</p>
+
+				<script language="JavaScript">
+					var totalnumbers = 1 //input total foods to generate
+					var lowerbound = 1 //input lower bound for each random food
+					var upperbound = 0 //input upper bound for each random food
+
+
+
+					function hide() {
+						document.getElementById("tb").style.display = "none";
+						document.getElementById("result").style.display = "block";
+						var f1 = document.getElementById("f1").value;
+						var f2 = document.getElementById("f2").value;
+						var f3 = document.getElementById("f3").value;
+						var f4 = document.getElementById("f4").value;
+						var f5 = document.getElementById("f5").value;
+						var url_php = "result.php/?q=b";
+						if (f1 != '') {
+							upperbound++;
+							url_php += "&item0=" + f1;
+						}
+						if (f2 != '') {
+							upperbound++;
+							url_php += "&item1=" + f2;
+						}
+						if (f3 != '') {
+							upperbound++;
+							url_php += "&item2=" + f3;
+						}
+						if (f4 != '') {
+							upperbound++;
+							url_php += "&item3=" + f4;
+						}
+						if (f5 != '') {
+							upperbound++;
+							url_php += "&item4=" + f5;
+						}
+						window.open(url_php, "childForm", "width=300, height=100, scrollbars = no,location= no,toolbars= n");
+					}
+
+					function lotto() {
+						var f1 = document.getElementById("f1").value;
+						var f2 = document.getElementById("f2").value;
+						var f3 = document.getElementById("f3").value;
+						var f4 = document.getElementById("f4").value;
+						var f5 = document.getElementById("f5").value;
+
+						B = ' ';
+						LottoNumbers = new Array();
+						for (i = 1; i <= totalnumbers; i++) {
+							RandomNumber = Math.round(lowerbound + Math.random() * (upperbound - lowerbound));
+							for (j = 1; j <= totalnumbers; j) {
+								if (RandomNumber == LottoNumbers[j]) {
+									RandomNumber = Math.round(lowerbound + Math.random() * (upperbound - lowerbound));
+									j = 0;
+								}
+								j++;
+							}
+							LottoNumbers[i] = RandomNumber;
+						}
+						LottoNumbers = LottoNumbers.toString();
+						X = LottoNumbers.split(',');
+						for (i = 0; i < X.length; i++) {
+							X[i] = X[i] + ' ';
+							if (X[i].length == 2)
+								X[i] = '0' + X[i];
+						}
+						X = X.sort();
+						for (i = 0; i < X.length; i++) {
+							OutPut = B += X[i];
+						}
+						if (document.all) document.all.layer1.innerHTML = OutPut;
+						if (document.getElementById) {
+							var a = OutPut;
+							if (a == 1) {
+								document.getElementById("layer1").innerHTML = f1;
+							}
+							if (a == 2) {
+								document.getElementById("layer1").innerHTML = f2;
+							}
+							if (a == 3) {
+								document.getElementById("layer1").innerHTML = f3;
+							}
+							if (a == 4) {
+								document.getElementById("layer1").innerHTML = f4;
+							}
+							if (a == 5) {
+								document.getElementById("layer1").innerHTML = f5;
+							}
+						}
+						if (document.layers) {
+							document.layers.layer1.document.open();
+							document.layers.layer1.document.write(
+								"<span style='position:absolute;top:0px;left:0px;font-family:Verdana;font-size:20px;color:#888888;text-align:center'> " +
+								OutPut + "</span>");
+							document.layers.layer1.document.close();
+						}
+
+						function answer(x) {
+							a = x;
+						} //////////////////////////////// 선택된 음식!!!!!!!!!!
+						var url_php = "result.php/?q=b";
+						if (f1 != '') {
+							url_php += "&item0=" + f1;
+						}
+						if (f2 != '') {
+							url_php += "&item1=" + f2;
+						}
+						if (f3 != '') {
+							url_php += "&item2=" + f3;
+						}
+						if (f4 != '') {
+							url_php += "&item3=" + f4;
+						}
+						if (f5 != '') {
+							url_php += "&item4=" + f5;
+						}
+						window.open(url_php, "childForm", "width=300, height=100, scrollbars = no,location= no,toolbars= n");
+
+					}
+				</script>
+
+				<h2>What food?</h2>
+
+				<table id="q" cellpadding=10 border=1 width=800>
+
+					<tr>
+						<td>01</td>
+						<td>02</td>
+						<td>03</td>
+						<td>04</td>
+						<td>05</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="f1">
+						</td>
+						<td>
+							<input type="text" id="f2">
+						</td>
+						<td>
+							<input type="text" id="f3">
+						</td>
+						<td>
+							<input type="text" id="f4">
+						</td>
+						<td>
+							<input type="text" id="f5">
+						</td>
+					</tr>
+				</table>
+
+				<table border='0' width=250 height=50>
+					<tr valign='middle'>
+						<td align='center'>
+							<input type=button value='확인' id='tb' onClick="hide()">
+							<input type=button value='Choose' id="result" onClick="lotto()"><br>
+							<span id=layer1 class=a1>Result</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; MJ JM HN TY YU MH. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+템플릿: html5up.net	aj@lkn.io | @ajlkn
+로고: 미리캔버스
+사진: 픽사베이
+
+<가져온 source code>
+룰렛 : https://blueshw.github.io/2019/06/27/roulette/
+사다리타기 : https://fmaker7.tistory.com/56
+제비뽑기: http://www.webmadang.net/javascript/javascript.do?action=read&boardid=8001&page=16&seq=104
+드롭다운 메뉴바: https://amaze9001.tistory.com/70

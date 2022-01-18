@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+	<title>Contact Us : 오늘의 음식</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel="stylesheet" href="../../assets/css/contact.css" />
+	<noscript>
+		<link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<script>
+		var str;
+		var length;
+		str = document.getElementById("textarea").value;
+
+		function keyup() {
+			if (document.getElementById("textarea").value >= 256) {
+				alert("256자 이하로 입력하셔야 합니다");
+			}
+		}
+
+		function clickon() {
+			alert("정상적으로 제출되었습니다!");
+		}
+	</script>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo (로고) -->
+				<a href="../../index.html" class="logo">
+					<span class="symbol">
+						<img src="../../images/logo.svg" alt="로고" /></span><span class="title">오늘의 음식</span>
+				</a>
+
+				<!-- 메뉴바 (최대 화면) -->
+				<!-- https://amaze9001.tistory.com/70 참고 -->
+				<a>
+					<ul>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/about.html" class="active">
+								<button class="dropbtn">About Us</button></a>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Game</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/Game/lots.html">제비뽑기</a>
+								<a href="../../subpages/Game/roulette.html">룰렛</a>
+								<a href="../../subpages/Game/ghostleg.html">사다리타기</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Food Rank</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/FoodRank/wholefoodrank.html">전체 음식 순위</a>
+								<a href="../../subpages/FoodRank/chosencategoryrank.html">항목별 음식 순위</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/BulletinBoard/bulletinboard.html" class="active">
+								<button class="dropbtn">BulletinBoard</button></a>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/contactus.html" class="active">
+								<button class="dropbtn">Contact Us</button></a>
+						</div>
+					</ul>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- 메뉴 (축소 화면) -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../subpages/ETC/about.html">About Us</a></li>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Game
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/lots.html"
+						style="color: white">제비뽑기</a>
+				</div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/roulette.html"
+						style="color: white">룰렛</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/ghostleg.html"
+						style="color: white">사다리타기</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Food Rank
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/wholefoodrank.html"
+						style="color: white">전체음식순위</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/chosencategoryrank.html"
+						style="color: white">항목별음식순위</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li><a href="../../subpages/BulletinBoard/bulletinboard.html">Bulletin Board</a></li>
+				<li><a href="../../subpages/ETC/contactus.html">Contact Us</a></li>
+			</ul>
+		</nav>
+		
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<p>
+					<h1>Contact Us</h1>
+				</p>
+				<div class="container">
+					<form method="post" action="../../ctinsert.php" onsubmit="return clickon();">
+
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+						<label for="country">Country</label>
+						<select id="country" name="country">
+							<option value="korea">Korea</option>
+							<option value="germany">Germany</option>
+							<option value="usa">USA</option>
+							<option value="china">China</option>
+							<option value="japan">Japan</option>
+							<option value="russia">Russia</option>
+							<option value="canada">Canada</option>
+							<option value="england">England</option>
+						</select>
+
+						<label for="Email">Email</label>
+						<input type="text" id="email" name="email" placeholder="Your email.." required>
+
+						<label for="Phone number">Phone number</label>
+						<input type="text" id="pnumber" name="phonenumber" placeholder="Your phone number.." required>
+
+						<label for="subject">Subject</label>
+						<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"
+							required maxlength="250" onkeyup="keyup();"></textarea>
+
+						<input type="submit" value="Submit">
+
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; MJ JM HN TY YU MH. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

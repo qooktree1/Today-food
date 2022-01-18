@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+	<title>전체 음식 순위 : 오늘의 음식</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel="stylesheet" href="../../assets/css/foodrank.css" />
+	<noscript>
+		<link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo (로고) -->
+				<a href="../../index.html" class="logo">
+					<span class="symbol">
+						<img src="../../images/logo.svg" alt="로고" /></span><span class="title">오늘의 음식</span>
+				</a>
+
+				<!-- 메뉴바 (최대 화면) -->
+				<!-- https://amaze9001.tistory.com/70 참고 -->
+				<a>
+					<ul>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/about.html" class="active">
+								<button class="dropbtn">About Us</button></a>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Game</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/Game/lots.html">제비뽑기</a>
+								<a href="../../subpages/Game/roulette.html">룰렛</a>
+								<a href="../../subpages/Game/ghostleg.html">사다리타기</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Food Rank</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/FoodRank/wholefoodrank.html">전체 음식 순위</a>
+								<a href="../../subpages/FoodRank/chosencategoryrank.html">항목별 음식 순위</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/BulletinBoard/bulletinboard.html" class="active">
+								<button class="dropbtn">BulletinBoard</button></a>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/contactus.html" class="active">
+								<button class="dropbtn">Contact Us</button></a>
+						</div>
+					</ul>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- 메뉴 (축소 화면) -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../subpages/ETC/about.html">About Us</a></li>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Game
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/lots.html"
+						style="color: white">제비뽑기</a>
+				</div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/roulette.html"
+						style="color: white">룰렛</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/ghostleg.html"
+						style="color: white">사다리타기</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Food Rank
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/wholefoodrank.html"
+						style="color: white">전체음식순위</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/chosencategoryrank.html"
+						style="color: white">항목별음식순위</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li><a href="../../subpages/BulletinBoard/bulletinboard.html">Bulletin Board</a></li>
+				<li><a href="../../subpages/ETC/contactus.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<p>
+					<h1>전체 음식 순위</h1>
+				</p>
+
+				<div class="container">
+					<form action="">
+						<table id="frt" class="tablerank">
+							<tr>
+								<h3 align=center>전체 음식 순위</h3>
+							</tr>
+							<tr>
+								<td style="width: 20%;" border="1">순위</td>
+								<td>이름</td>
+								<td>선호도</td>
+							</tr>
+							<?php
+							include "../../DBCONNECT.php";
+							if(isset($_GET['page'])) {
+								$page = $_GET['page'];
+							} else {
+								$page = 1;
+							}
+							if(isset($_GET['pagination'])){
+								$pagination = $_GET['pagination'];
+							}else{
+								$pagination = 1;
+							}
+							$sql = 'select * from FoodStatistic';
+							$result = $connect->query($sql);
+							$totalboardnum = mysqli_num_rows($result);//총페이지수
+							$totalpagenum = ceil($totalboardnum/10);//10개 게시물수..
+							$totalblocknum= ceil($totalpagenum/5);
+							$currentpagenum = (($page-1)*10); //현재 페이지 수
+							$sql2 = "select *from FoodStatistic order by Count desc limit $currentpagenum,10";
+							$res2 = $connect -> query($sql2);
+							$num2=(($page-1)*10)+1;
+
+								(int)$i_n=1; //나열순
+								while($row = $res2->fetch_array()){
+									echo("<tr><td>");
+									echo((int)$currentpagenum+(int)$i_n);
+									echo("</td><td>");
+									echo($row["Food"]);
+									echo("</td><td>");
+									echo($row["Count"]);
+									echo("</td></tr>");
+									$i_n = $i_n+1;
+								}
+							?>
+							<td align="center" colspan="5"> <?php
+							$before=$pagination-1; //현재 블록 위치 -1
+							$after=$pagination+1; // 현재 블록 위치 +1
+							$before2=$before*5;
+							$after2=$after*5-4;
+							if($pagination>1)
+							{
+								echo"<a href='wholefoodrank.html?pagination=$before&page=$before2'>처음</a>";
+							}
+							for($i=$pagination*5-4; $i<=$pagination*5;$i++)
+							{
+								if($i<=$totalpagenum){
+									echo"<a href='wholefoodrank.html?pagination=$pagination&page=$i'>[$i]</a>";
+								}else{break;}
+
+							}
+							if($pagination<$totalblocknum){
+								echo"<a href='wholefoodrank.html?pagination=$after&page=$after2'>끝</a>";
+							}
+							?></td>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; MJ JM HN TY YU MH. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+3. Footer (PJM)
+◆footer의 회색 박스 없앰
+◆.copyright li에 left:30%; 추가해서 text 정렬
+
+4. Footer (KMJ)
+◆#footer > .inner .copyright에 text-align: cetner; 추가해서 text 정렬
+◆@media screen and의 footer 부분 일부 주석 처리함
+
+5. Side Menu (KMH)
+◆화면 축소하면 나타나는 사이드 메뉴 깔끔하게 수정함
+
+6. Game (PJM)
+◆5에서 수정안된 부분들 수정함
+◆게임 추가함
+
+11. Statistics (KMJ)
+◆자잘한 것들 다 수정함
+    -메뉴바, 사이드바의 잘못된 링크 이동
+    -페이지 타이틀
+◆통계 인터페이스 만들어 둠.
+◆LOGO.svg를 logo.svg로 이름 수정함 => 웹 호스팅 서비스는 리눅스 기반이라서 대문자와 소문자를 구별한다고 함. 호스팅을 했을 때 로고에 액박이 뜬 이유는 코드는 소문자였는데 이름이 대문자여서 였음.
+
+13. 201130
+◆BULLETIN BOARD 구현 완료 (MH)
+◆게임 기능 FRONT END 거의 완성 (JM)
+◆전체 음식 순위 구현 완료 (MJ TY YJ)
+
+14. 201201
+◆ABOUT US 내용 수정 (JM)
+◆메뉴바 버튼 글자 바깥 부분 클릭 시 이동 안 되는 현상 고침 (JM)
+◆게시판 FRONT END 완료 (JM)
+◆게시판 BACK END 구현 중 (YJ)
+◆항목별 음식 순위 구현 완료 (MJ, TY)
+◆앱 완성 (MH)
+◆음식 리스트 데이터베이스에 입력 (MJ)
+◆저작권 문제로 인한 로고 변경 (MJ)
+
+15. 201202
+◆UPDATES, COPYRIGHT, PRIVACY 페이지 만듬 (MJ)
+◆게시판 BACK END 구현 완료 (YJ)
+
+17. 281204
+◆게임과 데이터베이스 연결 (TY)
+◆룰렛 선명도, 깨짐 해결 (JM)
+◆앱에서 룰렛 크기 관련해서 발생하는 문제 해결 (MH, JM, TY)
+
+18. 201206
+◆게시판 인터페이스 수정 완료 (MH, MJ)
+
+19. 201207
+◆일부 UI 변경 완료 (MJ)
+◆메뉴바 목록 일부 수정 (MJ)
+
+20. 201208
+◆게시글 수정 기능 (TY)

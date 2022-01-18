@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Head -->
+
+<head>
+	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+	<title>사다리 타기 : 오늘의 음식</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel="stylesheet" href="../../assets/css/game_ladder.css" />
+	<noscript>
+		<link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo (로고) -->
+				<a href="../../index.html" class="logo">
+					<span class="symbol">
+						<img src="../../images/logo.svg" alt="로고" /></span><span class="title">오늘의 음식</span>
+				</a>
+
+				<!-- 메뉴바 (최대 화면) -->
+				<!-- https://amaze9001.tistory.com/70 참고 -->
+				<a>
+					<ul>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/about.html" class="active">
+								<button class="dropbtn">About Us</button></a>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Game</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/Game/lots.html">제비뽑기</a>
+								<a href="../../subpages/Game/roulette.html">룰렛</a>
+								<a href="../../subpages/Game/ghostleg.html">사다리타기</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<button class="dropbtn">Food Rank</button>
+							<div class="dropdown-content">
+								<a href="../../subpages/FoodRank/wholefoodrank.html">전체 음식 순위</a>
+								<a href="../../subpages/FoodRank/chosencategoryrank.html">항목별 음식 순위</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/BulletinBoard/bulletinboard.html" class="active">
+								<button class="dropbtn">BulletinBoard</button></a>
+						</div>
+						<div class="dropdown">
+							<a href="../../subpages/ETC/contactus.html" class="active">
+								<button class="dropbtn">Contact Us</button></a>
+						</div>
+					</ul>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- 메뉴 (축소 화면) -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../subpages/ETC/about.html">About Us</a></li>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Game
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/lots.html"
+						style="color: white">제비뽑기</a>
+				</div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/roulette.html"
+						style="color: white">룰렛</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/Game/ghostleg.html"
+						style="color: white">사다리타기</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li>
+					<div style="margin-top: 0.5em;"></div>Food Rank
+				</li> <!-- 정의 -->
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/wholefoodrank.html"
+						style="color: white">전체음식순위</a></div>
+				<div text-align=left style="margin-left:1em"><a href="../../subpages/FoodRank/chosencategoryrank.html"
+						style="color: white">항목별음식순위</a></div>
+				<div style="margin-top: 0.5em;"></div>
+				<li><a href="../../subpages/BulletinBoard/bulletinboard.html">Bulletin Board</a></li>
+				<li><a href="../../subpages/ETC/contactus.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<p>
+					<h1>사다리타기</h1>
+				</p>
+
+				<script>
+					var doubleSubmitFlag = false;
+
+					function doubleSubmitCheck() {
+						if (doubleSubmitFlag) {
+							return doubleSubmitFlag;
+						} else {
+							doubleSubmitFlag = true;
+							return false;
+						}
+					}
+
+
+					var idNum = 0;
+					var arra = [];
+					var view = ["", "-"];
+					var num = 0;
+					window.onload = function () {
+						var ok = document.getElementById("ok");
+
+						var start = document.getElementById("start");
+						var moneys = [];
+
+						footer.style.display = "block";
+
+						game.style.visibility = "visible";
+						ok.onclick = function () {
+
+							game.style.display = "none";
+							ok.style.display = "none";
+							inputName.style.visibility = "visible";
+
+							start.style.display = "block";
+
+							num = document.getElementById("num").value;
+							var show = "<table border id='input' height=4>";
+							show += "<tr><th >음식선택</th></tr>"
+							var n = 0;
+							for (var i = 0; i < num; i++) {
+								n++;
+								show +=
+									"<tr><td><input type='radio' name='name' value=" + n +
+									">이름<td><input type='text' name='item'></td></tr>";
+							}
+							show += "</table>";
+							document.getElementById("show").innerHTML = show;
+						}
+						start.onclick = function () {
+							inputName.style.display = "none";
+							result.style.visibility = "visible";
+							result.style.display = "block";
+							var name = document.getElementsByName("name");
+							var item = document.getElementsByName("item");
+							var url_php = "result.php/?q=a";
+							var show1 = "<p>결과</p>"
+							show1 += "<table id='output' >";
+							show1 += "<tr>";
+							for (var i = 0; i < num; i++) {
+								show1 += "<td><input id = " + idNum + " type='button' font-size='2px' name='b_name' value=" +
+									name[i].value +
+									"></td>";
+								idNum++;
+								if (i != num - 1) {
+									show1 += "<td> </td>";
+									idNum++;
+								}
+							}
+							show1 += "</tr>";
+							for (var i = 0; i < 10; i++) {
+								show1 += "<tr>";
+								for (var j = 0; j < num; j++) {
+									arra[j] = parseInt(Math.random() * 2);
+									show1 += "<td>|</td>";
+									idNum++;
+									if (j != num - 1) {
+										if (j != 0 && (arra[j - 1] == 1)) {
+											arra[j] = 0;
+										}
+										show1 += "<td>" + view[arra[j]] + "</td>"; // 0 1 2
+									}
+								}
+								show1 += "</tr>";
+							}
+							show1 += "<tr>";
+							for (var i = 0; i < num; i++) {
+								show1 += "<td>" + item[i].value + "</td>";
+								url_php += "&item" + i + "=" + item[i].value;
+								if (i != num - 1) {
+									show1 += "<td></td>";
+								}
+							}
+							show1 += "</tr>";
+							show1 += "</table>";
+							document.getElementById("shResult").innerHTML = show1; //당첨 화면
+
+							var b_name = document.getElementsByName("b_name");
+							for (var i = 0; i < b_name.length; i++) {
+								b_name[i].onclick = chResult;
+							}
+							window.open(url_php, "childForm",
+								"width=300, height=100, scrollbars = no,location= no,toolbars= n");
+
+						}
+					}
+
+					function chResult() {
+
+
+						if (doubleSubmitCheck()) return;
+
+
+
+						var tr = document.getElementsByTagName("tr");
+
+						var i = parseInt(num) + 2;
+						var j = parseInt(this.id);
+						var inter = null;
+						var finish = tr[i].childNodes[j].innerHTML;
+
+						tr[i].childNodes[j].innerHTML = 'o';
+						inter = setInterval(function () {
+
+
+
+							if (tr[i].childNodes[j - 1] && tr[i].childNodes[j - 1].innerHTML == "-") {
+								j = j - 2;
+							} else if (tr[i].childNodes[j + 1] && tr[i].childNodes[j + 1].innerHTML == "-") {
+								j = j + 2;
+
+							}
+
+
+							finish = tr[++i].childNodes[j].innerHTML;
+							tr[i].childNodes[j].innerHTML = 'o';
+
+							if (finish != "|" && finish != "-") {
+								alert(finish); /////////////////finish : 선택된 음식 이름
+
+								clearInterval(inter);
+
+							}
+						}, 100);
+					}
+				</script>
+				<div id="game">
+					음식 개수<br>
+
+					<select id="num" style="width:20%;">
+						<option value="2">2</option>
+						<option value="3" selected>3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select></div>
+				<input type="button" id="ok" value="확인" />
+				<div id="inputName">
+					<p id="show"></p>
+					<input type="button" id="start" value="사다리타기" />
+				</div>
+				<div id="result">
+					<p id="shResult"></p>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; MJ JM HN TY YU MH. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
