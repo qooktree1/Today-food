@@ -1,0 +1,71 @@
+.container {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.a1 {
+    position: relative;
+    font-family: Verdana;
+    font-size: 20px;
+    color: #888888;
+}
+
+#frt {
+    font-family: Verdana;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.seemore {
+    display:flex;
+    align-items:center; 
+    justify-content: center;
+
+    /*
+        <div class="seemore">
+							<button>더보기</button>
+                        </div>
+        전체 음식 순위에서 사용할 더보기 버튼이었으나 기술상의 문제로 인해 잠시 보류해두겠다...ㅠㅠ
+
+    */
+}
+
+.tablerank td {
+    word-break: break-all;
+}
+
+/* Text Dropdowns
+    https://www.w3schools.com/css/css_dropdowns.asp
+
+    <div class=" dropdown">
+    <span>음식 선택 하기</span>
+    <div class="dropdown-content">
+        직접 입력하기
+    </div>
+</div>
+*/
+
+td .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+td .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+td .dropdown:hover .dropdown-content {
+  display: block;
+}

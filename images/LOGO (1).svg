@@ -1,0 +1,14 @@
+<svg width="96" height="96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="98" width="98" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKMFRskAAAAQdFJOUwAQIDBAUGBwgI+fr7/P3+8jGoKKAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADl0lEQVRoQ+2Y2ZaqMBBFG0EZFM3/f21nqEBqygD4cNft/dCNKOdAkhrCzx//Kf0AB1+if5sZDr/DaIxZe/jwFWbrYCb4cDV+/L3DegtnrsWO/+bwuYdzjdzuD/3WrL7ZHQ4N0/ixF6qLZPC6u8PahfP1TP4684CPDOrwaVxNoG+e8BnRj/YPdTDuZDVR37zgRIodf9GhIeg2fekJ/PyKDtLdiOz60l31bvZlh8qpTvSNtMJzDjUxl+p/6AW9W/EZh4rFlOqzKbDjX3JwxzmQvr8yxekVHNg1GKzP15BTKTnkRgnrSzez2tOlUdJnmuhLkXNzXxQcVvdDCaL/Fle1K2MlBzHBMH0xBiwv9517uIyDOA1UX0stndfVHJ7+SBokqq+HfVBTHHp/IDw91c+FZBgHyeHRLf4/nwWmny2zfhpEh8jH/26H6vtLdDqXsY1Z7KHm4OZjh+lrExyBkXYFYHd4+HOAW8gbTH8p5vV7+CFyANdAeotMv6ZuhOWYOMwDzG8gMTikH5KSZXfA7AZM/13XCcJEaw7bHDD96gYnDrlzgClJiA0V16/vM+O6tA4dHO7AOmf6eisnEB3WO5pfT9Dh+vkAo/jULfLyC4XrlwKMwhUCmn45wCh8dh2afnsPLsfAlfq2SEPE7Wj6lQHGGSHkAE2/dQeR4ndDgKpfH2AS3bg8l2WepknRbwqwIoJ+W4AVEPRbAyxHrPsp7QGmI+kfCwCZDkpdyrf1DweYQBc6JkRxz9PADce0JwTYNSZ+Bx0Z+zDbPsBG3CcdBCVWv/Af89Pru2/OR8LA9CPB2TUHZ0D6KLDizJxzSBMqZFRg2GbmjAPSTwKrm9bkG3V3WAS1FyhwceI4GtMofZLAvcABpzdWGbHDu71wEn1eGXH6aC7NOL2JlfeUA0mfcuXFnU2TA0mfSsbpSO9Un/pI+lTzzVEHlD6z+SzuhyJ1TQzpS7OV/YZ/W+WA0lsxhmiXXG6U2vStA/wwUipBKL1VVXb8rqHkQPSr1jZ1cO86NMjurLJ1pg56gSDdZ3VrTndcigPrDutWtYPuS0UHpt/SmtPOWypytDtsa0jgveQGd6BP2drw0Odn15OIbG/9qQOJIBKQR4os6ZDJEkFv5g62CdkigpbyMX1S4sgTpK+GMi/y86ACRKN0n6MTW4vEAfWZjq04VScIic1BuEtoJF7tLRQijMQq3uV9Wqbh4Pzu9ON8gcof/ww/P79ds5lNlU+6dAAAAABJRU5ErkJggg==" id="svg_1" height="96" width="96"/>
+ </g>
+</svg>

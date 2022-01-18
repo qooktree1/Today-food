@@ -1,0 +1,65 @@
+#output {
+  table-layout: fixed;
+}
+
+#inputname {
+  -moz-transform: translateX(22em);
+  -webkit-transform: translateX(22em);
+  -ms-transform: translateX(22em);
+  transform: translateX(22em);
+  -moz-transition: -moz-transform 0.45s ease, visibility 0.45s;
+  -webkit-transition: -webkit-transform 0.45s ease, visibility 0.45s;
+  -ms-transition: -ms-transform 0.45s ease, visibility 0.45s;
+  transition: transform 0.45s ease, visibility 0.45s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 22em;
+  max-width: 80%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  background: #585858;
+  color: #ffffff;
+  cursor: default;
+  z-index: 10002;
+}
+
+#inputName > .inner {
+  -moz-transition: opacity 0.45s ease;
+  -webkit-transition: opacity 0.45s ease;
+  -ms-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.75em;
+  opacity: 0;
+  overflow-y: auto;
+}
+
+#inputName > .inner {
+  padding: 2.75em 1.5em;
+}
+body.is-menu-visible #inputName {
+  -moz-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+body.is-menu-visible #inputName > * {
+  opacity: 1;
+}
+/* Main */
+#inputName {
+  padding: 0em 0 6em 0;
+  visibility: hidden;
+}
+@media screen and (max-width: 736px) {
+  #inputName {
+    padding: 0em 0 4em 0;
+  }
+}

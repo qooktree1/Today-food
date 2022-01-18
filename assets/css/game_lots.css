@@ -1,0 +1,16 @@
+.a1 {
+  position: relative;
+  font-family: Verdana;
+  font-size: 20px;
+  color: #888888;
+}
+#q {
+  font-family: Verdana;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+#result {
+  display: none;
+}
